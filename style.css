@@ -1214,3 +1214,50 @@ header {
   }
 }
 
+* {
+  scroll-padding-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilo para el link activo */
+nav a.active {
+  color: #2d4a3e;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2d4a3e;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* En móvil, el indicador del lado izquierdo */
+@media (max-width: 768px) {
+  nav a.active::after {
+    left: -10px;
+    right: auto;
+    width: 3px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+}
