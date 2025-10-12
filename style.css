@@ -1074,3 +1074,143 @@ header {
     width: 250px;
   }
 }
+
+.pillars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 60px auto 20px auto;
+  padding: 0 4rem;
+}
+
+.pillar-card {
+  background: white;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid #2d4a3e;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to bottom right, #52867e, #d4e4dc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.pillar-title {
+  font-size: 1.4rem;
+  color: #2d4a3e;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pillar-description {
+  font-size: 0.95rem;
+  color: #2d4a3e;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #bbe2cb54;
+  color: #2d4a3e;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.tag-icon {
+  width: 18px;
+  height: 18px;
+  background: #b8d4c8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* Carrusel en móvil */
+@media (max-width: 768px) {
+  .pillars-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    margin: 40px 0 20px 0;
+    scroll-padding: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pillars-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .pillars-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 0 1.5rem;
+  }
+
+  .pillars-container::-webkit-scrollbar-thumb {
+    background: #b8d4c8;
+    border-radius: 10px;
+  }
+
+  .pillars-container::-webkit-scrollbar-thumb:hover {
+    background: #a0c4b4;
+  }
+
+  .pillar-card {
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 20px;
+  }
+
+  .pillar-title {
+    font-size: 1.2rem;
+  }
+
+  .pillar-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillars-container {
+    padding: 0 1rem;
+    scroll-padding: 1rem;
+  }
+
+  .pillar-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+}
+
