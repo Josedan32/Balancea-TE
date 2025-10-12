@@ -48,10 +48,34 @@ document.querySelectorAll('.stat-number').forEach(stat => {
     observer.observe(stat);
 });
 
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("navbar");
+// Agregar este script al final del body o en un archivo JS separado
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const body = document.body;
 
-toggle.addEventListener("click", () => {
-nav.classList.toggle("show");
-toggle.textContent = nav.classList.contains("show") ? "✕" : "☰";
+  mobileMenuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    body.classList.toggle('menu-open');
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      body.classList.remove('menu-open');
+    });
+  });
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener('click', function(event) {
+    if (!navMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+      mobileMenuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+  });
 });
