@@ -1,0 +1,555 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #faf9f5;
+  color: #2d3748;
+}
+
+.podcast-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  margin-top: 80px;
+  scroll-margin-top: 75px;
+}
+
+.podcast-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.podcast-icon {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #2d4a3e, #52867e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  font-size: 3rem;
+}
+
+.podcast-title {
+  font-size: 2.8rem;
+  color: #1a202c;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.podcast-subtitle {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Contenedor principal con borde */
+.podcast-container {
+  background: white;
+  border: 2px solid #e8ddd0;
+  border-radius: 30px;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+/* Sección "Sobre el Podcast" */
+.about-podcast-title {
+  font-size: 1.5rem;
+  color: #2d4a3e;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.about-podcast p {
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Nuestros Anfitriones */
+.hosts-section {
+  margin-top: 3rem;
+}
+
+.hosts-title {
+  font-size: 1.4rem;
+  color: #2d4a3e;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.hosts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.host-card {
+  background: linear-gradient(135deg, #d9d4c8, #e8ddd0);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.host-card:hover {
+  transform: translateY(-3px);
+}
+
+.host-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #52867e, #6fa39e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.host-info {
+  text-align: left;
+}
+
+.host-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d4a3e;
+  margin-bottom: 0.3rem;
+}
+
+.host-role {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+/* Stats */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #d9d4c8, #e8ddd0);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d4a3e;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-top: 0.5rem;
+}
+
+/* Plataformas */
+.platforms-section {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e8ddd0;
+}
+
+.platforms-title {
+  font-size: 1.4rem;
+  color: #2d4a3e;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.platform-item {
+  text-align: center;
+  background: linear-gradient(135deg, #d9d4c8, #e8ddd0);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.platform-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.platform-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #52867e, #6fa39e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.platform-item:hover .platform-icon {
+  transform: scale(1.1);
+}
+
+.platform-name {
+  font-size: 0.95rem;
+  color: #2d4a3e;
+  font-weight: 600;
+}
+
+/* Episodios */
+        .episodes-section {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e8ddd0;
+        }
+
+        .episodes-title {
+            font-size: 1.4rem;
+            color: #2d4a3e;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .episode-card {
+            background: linear-gradient(135deg, #d9d4c8, #e8ddd0);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .episode-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #52867e, #6fa39e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .episode-number {
+            font-size: 0.75rem;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .episode-title {
+            font-size: 0.95rem;
+            color: #2d4a3e;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .episode-description {
+            font-size: 0.85rem;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2d4a3e, #3a5a4d);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .cta-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .cta-description {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: white;
+            color: #2d4a3e;
+            padding: 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .podcast-container {
+    padding: 2.5rem;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .stat-box {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .episodes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .podcast-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .podcast-title {
+    font-size: 2rem;
+  }
+
+  .podcast-container {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .hosts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .host-card {
+    padding: 1rem;
+  }
+
+  .host-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .host-name {
+    font-size: 0.95rem;
+  }
+
+  .host-role {
+    font-size: 0.8rem;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .stat-box {
+    padding: 0.8rem;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .platform-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .platform-name {
+    font-size: 0.85rem;
+  }
+
+  .episodes-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .episode-card {
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+
+            .episode-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            .episode-title {
+                font-size: 0.9rem;
+            }
+
+            .episode-description {
+                font-size: 0.8rem;
+            }
+
+            .cta-section {
+                padding: 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 1.1rem;
+            }
+
+            .cta-description {
+                font-size: 0.9rem;
+            }
+}
+
+@media (max-width: 480px) {
+  .podcast-title {
+    font-size: 1.5rem;
+  }
+
+  .podcast-container {
+    padding: 1.2rem;
+  }
+
+  .about-podcast-title {
+    font-size: 1.2rem;
+  }
+
+  .about-podcast p {
+    font-size: 0.9rem;
+  }
+
+  .hosts-title {
+    font-size: 1.2rem;
+  }
+
+  .hosts-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .platform-item {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .platform-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .platform-name {
+    font-size: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .episodes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .episode-card {
+                padding: 0.8rem;
+            }
+
+            .episode-icon {
+                width: 40px;
+                height: 40px;
+            }
+}
+
+@media (max-width: 768px) {
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .platform-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .platform-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .platform-name {
+    font-size: 0.85rem;
+  }
+}

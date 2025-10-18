@@ -161,3 +161,35 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(section);
     });
   });
+
+
+  // 1. Crea la instancia del objeto Audio FUERA del evento de clic.
+// Esto asegura que es el mismo objeto el que controlamos.
+const welcomeAudio = new Audio('./audio/example.mp3');
+
+// 2. Selecciona el botón por su ID.
+const playButton = document.getElementById('playButton');
+
+// 3. Agrega el escuchador de eventos.
+playButton.addEventListener('click', () => {
+    // 4. Lógica de Play/Pause:
+    
+    if (welcomeAudio.paused) {
+        // Si el audio está pausado (o no ha empezado),
+        // lo reproducimos.
+        welcomeAudio.play();
+        console.log("Audio Reproducido");
+        
+        // Opcional: Cambiar el texto del botón
+        playButton.querySelector('span:last-child').textContent = 'Pausar episodio de bienvenida';
+        
+    } else {
+        // Si el audio ya se está reproduciendo,
+        // lo pausamos.
+        welcomeAudio.pause();
+        console.log("Audio Pausado");
+        
+        // Opcional: Cambiar el texto del botón
+        playButton.querySelector('span:last-child').textContent = 'Escuchar episodio de bienvenida';
+    }
+});
