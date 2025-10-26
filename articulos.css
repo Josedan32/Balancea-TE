@@ -348,7 +348,7 @@ body {
   border-radius: 12px;
   margin-bottom: 20px;
   object-fit: cover;
-  max-height: 340px;
+  /* max-height: 340px; */
 }
 
 .article-title {

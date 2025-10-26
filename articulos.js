@@ -8,7 +8,7 @@ const articles = [
     author: "Johan Sebastian",
     readTime: "7 min",
     // comments: 18,
-    image: "./images/dormir.jpg",
+    image: "article01",
     content: `
     </br><p>Dormir no es un lujo, es una necesidad biológica tan importante como alimentarse o mantenerse
     activo. Durante el sueño, el cerebro y el cuerpo no se “apagan”, sino que cumplen funciones vitales
@@ -56,7 +56,7 @@ beneficios:</p>
     <h3>Referencias</h3>
     <p>U.S. Departament of hearth and human servise. (Julio de 2013). <em>Su guia para un sueño saludable.</em></p>
     <p>Obtenido de: <a style="color: blue" href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.nhlbi.nih.gov/files/doc
-s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
+s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p><br>
   `
   },
   { 
@@ -67,6 +67,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
     excerpt: "En la vida moderna, marcada por la rapidez de las obligaciones laborales, académicas y sociales, el tiempo libre se ha convertido ..",
     author: "Johan Sebastian",
     readTime: "6 min",
+    image: "article02",
     // comments: 18, 
     content: `
     <p>
@@ -119,6 +120,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
     excerpt: "Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud física, mental y emocional.",
     author: "Johan Sebastian",
     readTime: "7 min",
+    image: "article03",
     comments: 32,
     content: `
     <p>Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud
@@ -153,6 +155,7 @@ también potencia el rendimiento y la felicidad en el ámbito laboral.</p><br>
     excerpt: "En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de mantener un equilibrio que favorezca la salud, la energía y..",
     author: "Johan Sebastian",
     readTime: "5 min",
+    image: "article05",
     comments: 15,
     content: `
       <p>En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de
@@ -205,6 +208,7 @@ día. Alimenta tu cuerpo, nutre tu mente y vive con armonía.</p>
     date: "16 de febrero, 2024",
     excerpt: "Herramientas prácticas para cuidar tu salud mental antes de que surjan crisis.",
     author: "Johan Sebastian",
+    image: "article04",
     readTime: "9 min",
     comments: 41,
     content: `
@@ -444,8 +448,15 @@ function openArticle(id) {
         <strong>${a.author}</strong>
       </div>
       <hr/>
-      <div class="article-body">${a.content || `<p>${a.excerpt}</p>`}</div>
-      ${a.image ? `<img src="${a.image}" alt="${a.title}" class="article-cover"/>` : ''}
+      <div class="article-body">${a.content || `<p>${a.excerpt}</p>`}</div><br>
+      ${a.image ? ` 
+        <div>
+          <h3>Infografia</h3>
+          <a href="./image/${a.image}.jpg" target="_blank" style="color: #12382f; font-weight: bold;" >Abrir →</a>
+        </div>
+          <img src="./image/${a.image}.jpg" height="180" style="border: 2px #12382f solid;"/>
+        `
+      : ''}
       <div class="article-actions">
         <button class="close-btn-2">Cerrar</button>
       </div>
