@@ -163,33 +163,68 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  // 1. Crea la instancia del objeto Audio FUERA del evento de clic.
-// Esto asegura que es el mismo objeto el que controlamos.
-const welcomeAudio = new Audio('./audio/example.mp3');
 
-// 2. Selecciona el botón por su ID.
-const playButton = document.getElementById('playButton');
+document.addEventListener('DOMContentLoaded', () => {
+    // Objeto para almacenar las instancias de audio
+    const audioPlayers = {};
+    let currentlyPlaying = null;
 
-// 3. Agrega el escuchador de eventos.
-playButton.addEventListener('click', () => {
-    // 4. Lógica de Play/Pause:
-    
-    if (welcomeAudio.paused) {
-        // Si el audio está pausado (o no ha empezado),
-        // lo reproducimos.
-        welcomeAudio.play();
-        console.log("Audio Reproducido");
+    // Seleccionar todos los botones de reproducción
+    const playButtons = document.querySelectorAll('.episode-play-btn');
+
+    playButtons.forEach(button => {
+        const audioSrc = button.dataset.audio;
         
-        // Opcional: Cambiar el texto del botón
-        playButton.querySelector('span:last-child').textContent = 'Pausar episodio de bienvenida';
-        
-    } else {
-        // Si el audio ya se está reproduciendo,
-        // lo pausamos.
-        welcomeAudio.pause();
-        console.log("Audio Pausado");
-        
-        // Opcional: Cambiar el texto del botón
-        playButton.querySelector('span:last-child').textContent = 'Escuchar episodio de bienvenida';
-    }
+        // Crear instancia de audio para cada episodio
+        if (!audioPlayers[audioSrc]) {
+            audioPlayers[audioSrc] = new Audio(audioSrc);
+        }
+
+        button.addEventListener('click', function() {
+            const audio = audioPlayers[audioSrc];
+            const playText = this.querySelector('.play-text');
+            const playIcon = this.querySelector('.play-icon img');
+
+            // Si hay otro audio reproduciéndose, pausarlo
+            if (currentlyPlaying && currentlyPlaying !== audio) {
+                currentlyPlaying.pause();
+                currentlyPlaying.currentTime = 0;
+                
+                // Resetear el botón del audio que estaba sonando
+                playButtons.forEach(btn => {
+                    if (btn.dataset.audio !== audioSrc) {
+                        btn.classList.remove('playing');
+                        btn.querySelector('.play-text').textContent = 'Escuchar episodio';
+                        btn.querySelector('.play-icon img').src = './icons/play.svg';
+                    }
+                });
+            }
+
+            // Toggle play/pause del audio actual
+            if (audio.paused) {
+                audio.play();
+                this.classList.add('playing');
+                playText.textContent = 'Pausar episodio';
+                playIcon.src = './icons/pause.svg';
+                currentlyPlaying = audio;
+                console.log(`Reproduciendo: ${audioSrc}`);
+            } else {
+                audio.pause();
+                this.classList.remove('playing');
+                playText.textContent = 'Escuchar episodio';
+                playIcon.src = './icons/play.svg';
+                currentlyPlaying = null;
+                console.log(`Pausado: ${audioSrc}`);
+            }
+        });
+
+        // Evento cuando el audio termina
+        audioPlayers[audioSrc].addEventListener('ended', () => {
+            button.classList.remove('playing');
+            button.querySelector('.play-text').textContent = 'Escuchar episodio';
+            button.querySelector('.play-icon img').src = './icons/play.svg';
+            currentlyPlaying = null;
+            console.log(`Episodio finalizado: ${audioSrc}`);
+        });
+    });
 });

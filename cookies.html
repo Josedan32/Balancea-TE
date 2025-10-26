@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies - Balancea-TE</title>
+    <link rel="stylesheet" href="cookies.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./image/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+      <a href="./index.html">
+        <div class="logo">
+          <img src="./image/logo.png" alt="Balancea-TE" class="logo-header" />
+          <span>Balancea-TE</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu">
+        <a href="./index.html">Inicio</a>
+        <a href="./index.html#nosotros">Sobre Nosotros</a>
+        <a href="./index.html#ecosistema">Ecosistema</a>
+        <a href="./articulos.html">Articulos</a>
+        <a href="./app.html" class="btn-comenzar">Comenzar</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <div class="cookie-illustration">
+            <div class="cookie" onclick="this.style.transform='scale(1.2) rotate(360deg)'">
+                <div class="chip chip1"></div>
+                <div class="chip chip2"></div>
+                <div class="chip chip3"></div>
+                <div class="chip chip4"></div>
+            </div>
+        </div>
+        <h1>Política de Cookies</h1>
+    </div>
+
+    <div class="container">
+        <div class="cookie-cards">
+            <div class="card" onclick="toggleCookie(1)">
+                <div class="card-icon">⚡</div>
+                <h3>Cookies Necesarias</h3>
+                <p>Esenciales para el funcionamiento básico del sitio. Sin estas, la experiencia no sería posible.</p>
+                <div class="toggle-switch active" id="toggle1">
+                    <div class="toggle-slider"></div>
+                </div>
+                <small style="color: #666; margin-top: 0.5rem; display: block;">Siempre activas</small>
+            </div>
+
+            <div class="card" onclick="toggleCookie(2)">
+                <div class="card-icon">📊</div>
+                <h3>Cookies Analíticas</h3>
+                <p>Nos ayudan a entender cómo interactúas con nuestro sitio para mejorarlo continuamente.</p>
+                <div class="toggle-switch" id="toggle2">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleCookie(3)">
+                <div class="card-icon">🎯</div>
+                <h3>Cookies de Marketing</h3>
+                <p>Personalizan tu experiencia y te muestran contenido relevante según tus intereses.</p>
+                <div class="toggle-switch" id="toggle3">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>🌿 ¿Qué son las cookies?</h2>
+            <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos permiten recordar tus preferencias, entender cómo usas nuestro sitio y ofrecerte una experiencia personalizada.</p>
+            <p>En Balancea-TE, las utilizamos para crear una experiencia que se adapte a tu camino hacia el bienestar integral y sostenible.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>🔒 Tu privacidad es importante</h2>
+            <p>Respetamos tu derecho a controlar tu información. Puedes cambiar tus preferencias en cualquier momento, y solo usaremos las cookies que hayas autorizado.</p>
+            <p>Para más información, consulta nuestra <a href="#" style="color: #2d5444; font-weight: 600;">Política de Privacidad</a>.</p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="acceptAll()">Aceptar Todas 🎉</button>
+            <button class="btn btn-secondary" onclick="acceptSelected()">Guardar Preferencias 💾</button>
+            <button class="btn btn-secondary" onclick="rejectAll()">Rechazar Opcionales ❌</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        ✅ Preferencias guardadas correctamente
+    </div>
+
+    <script src="cookies.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
