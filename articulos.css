@@ -150,7 +150,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 320px;
   position: relative;
   overflow: hidden;
   border: 1px solid #b8d4c8;
@@ -179,7 +179,6 @@ body {
 }
 .card h3 {
   margin: 0 0 8px;
-  /* font-family: Merriweather, serif; */
   font-size: 20px;
   padding-left: 8px;
   padding-right: 8px;
@@ -225,7 +224,7 @@ body {
   color: #6c6c66;
 }
 .read-more {
-  margin-top: 14px;
+  /* margin-top: 14px;   */
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -312,7 +311,7 @@ body {
   gap: 4px;
   padding: 2px 8px;
   border-radius: 999px;
-  color: #0000008c;
+  color: #000000b5;
   font-weight: 700;
   font-size: 10px;
   width: 100px;
@@ -421,5 +420,3 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-

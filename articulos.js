@@ -5,7 +5,7 @@ const articles = [
     category: "Descanso",
     date: "20 de diciembre, 2023",
     excerpt: "Dormir no es un lujo, es una necesidad biológica tan importante como alimentarse o mantenerse activo...",
-    author: "Diego Aguelo",
+    author: "Johan Sebastian",
     readTime: "7 min",
     // comments: 18,
     image: "./images/dormir.jpg",
@@ -65,7 +65,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
     category: "Ocio",
     date: "8 de marzo, 2024",
     excerpt: "En la vida moderna, marcada por la rapidez de las obligaciones laborales, académicas y sociales, el tiempo libre se ha convertido ..",
-    author: "Diego Aguelo",
+    author: "Johan Sebastian",
     readTime: "6 min",
     // comments: 18, 
     content: `
@@ -117,7 +117,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
     category: "Organización",
     date: "1 de marzo, 2024",
     excerpt: "Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud física, mental y emocional.",
-    author: "Sebastian Piedrahita",
+    author: "Johan Sebastian",
     readTime: "7 min",
     comments: 32,
     content: `
@@ -151,7 +151,7 @@ también potencia el rendimiento y la felicidad en el ámbito laboral.</p><br>
     category: "Alimentación",
     date: "23 de febrero, 2024",
     excerpt: "En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de mantener un equilibrio que favorezca la salud, la energía y..",
-    author: "Sebastian Piedrahita",
+    author: "Johan Sebastian",
     readTime: "5 min",
     comments: 15,
     content: `
@@ -204,7 +204,7 @@ día. Alimenta tu cuerpo, nutre tu mente y vive con armonía.</p>
     category: "Prevención",
     date: "16 de febrero, 2024",
     excerpt: "Herramientas prácticas para cuidar tu salud mental antes de que surjan crisis.",
-    author: "Sebastian Piedrahita",
+    author: "Johan Sebastian",
     readTime: "9 min",
     comments: 41,
     content: `
@@ -306,6 +306,7 @@ function renderMain() {
       c.className = 'card';
       const coverColor = getCoverColor(a.category);
       c.innerHTML = `
+            <div>
             <div class="cover square" style="background:${coverColor.background};color:${coverColor.text};">
              <img
                 src="./icons/${coverColor.icon}.svg"
@@ -313,16 +314,16 @@ function renderMain() {
                 width="50"
                 height="50"
               />
-            </div>
-            <!-- <div class="category-badge" style="margin-bottom:8px; background-color:#87be9d;"> ${a.category.toUpperCase()}</div> -->
+              </div>
+              <div class="category-badge" style="margin-bottom:8px; background-color:#87be9d ;"> ${a.category.toUpperCase()}</div>
+              </div>
+              <!-- <p class="lead">${a.excerpt}</p> -->
             <h3>${a.title}</h3>
-            <!-- <p class="lead">${a.excerpt}</p> -->
             <div class="meta-row">
             <div class="author">
               <div class="avatar">${initials(a.author)}</div>
               <div style="line-height:1.4">
                 <div style="font-weight:700">${a.author}</div>
-                <div class="muted-small">${a.date}</div>
               </div>
             </div>
               <a class="read-more" href="#" data-id="${a.id}">Leer artículo completo →</a>
@@ -380,12 +381,12 @@ function renderPager(totalItems) {
 // helper for colors similar to mock
 function getCoverColor(category) {
   switch (category) {
-    case "Alimentación": return { background: '#113427', text: '#fff', badge_color: "rgb(135 190 160)", icon: "apple-transparent" };
-    case "Descanso": return { background: '#113427', text: '#fff', badge_color: "rgb(45 210 190)", icon: "moon-transparent" };
-    case "Organización": return { background: '#113427', text: '#fff', badge_color: "rgb(95 165 250)", icon: "date-transparent" };
-    case "Ocio": return { background: '#113427', text: '#fff', badge_color: "rgb(250 190 35)", icon: "heart-transparent" };
-    case "Prevención": return { background: '#113427', text: '#fff', badge_color: "rgb(165 135 250)", icon: "shield-transparent" };
-    default: return { background: '#113427', text: '#fff', icon: "book" };
+    case "Alimentación": return { background: '#466954ff', text: '#fff', badge_color: "rgb(135 190 160)", icon: "apple-transparent" };
+    case "Descanso": return { background: '#466954ff', text: '#fff', badge_color: "rgb(45 210 190)", icon: "moon-transparent" };
+    case "Organización": return { background: '#466954ff', text: '#fff', badge_color: "rgb(95 165 250)", icon: "date-transparent" };
+    case "Ocio": return { background: '#466954ff', text: '#fff', badge_color: "rgb(250 190 35)", icon: "heart-transparent" };
+    case "Prevención": return { background: '#466954ff', text: '#fff', badge_color: "rgb(165 135 250)", icon: "shield-transparent" };
+    default: return { background: '#466954ff', text: '#fff', icon: "book" };
   }
 }
 
