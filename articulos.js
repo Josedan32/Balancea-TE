@@ -5,7 +5,7 @@ const articles = [
     category: "Descanso",
     date: "20 de diciembre, 2023",
     excerpt: "Dormir no es un lujo, es una necesidad biológica tan importante como alimentarse o mantenerse activo...",
-    author: "Carlos Rodríguez",
+    author: "Diego Aguelo",
     readTime: "7 min",
     // comments: 18,
     image: "./images/dormir.jpg",
@@ -59,12 +59,13 @@ beneficios:</p>
 s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
   `
   },
-  { id: 2,
+  { 
+    id: 2,
     title: "El valor del ocio y la recreación para la salud integral",
     category: "Ocio",
     date: "8 de marzo, 2024",
     excerpt: "En la vida moderna, marcada por la rapidez de las obligaciones laborales, académicas y sociales, el tiempo libre se ha convertido ..",
-    author: "Carlos Rodríguez",
+    author: "Diego Aguelo",
     readTime: "6 min",
     // comments: 18, 
     content: `
@@ -116,7 +117,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p>
     category: "Organización",
     date: "1 de marzo, 2024",
     excerpt: "Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud física, mental y emocional.",
-    author: "Laura Gómez",
+    author: "Sebastian Piedrahita",
     readTime: "7 min",
     comments: 32,
     content: `
@@ -150,7 +151,7 @@ también potencia el rendimiento y la felicidad en el ámbito laboral.</p><br>
     category: "Alimentación",
     date: "23 de febrero, 2024",
     excerpt: "En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de mantener un equilibrio que favorezca la salud, la energía y..",
-    author: "Miguel Torres",
+    author: "Sebastian Piedrahita",
     readTime: "5 min",
     comments: 15,
     content: `
@@ -203,7 +204,7 @@ día. Alimenta tu cuerpo, nutre tu mente y vive con armonía.</p>
     category: "Prevención",
     date: "16 de febrero, 2024",
     excerpt: "Herramientas prácticas para cuidar tu salud mental antes de que surjan crisis.",
-    author: "Elena Sánchez",
+    author: "Sebastian Piedrahita",
     readTime: "9 min",
     comments: 41,
     content: `
@@ -313,9 +314,10 @@ function renderMain() {
                 height="50"
               />
             </div>
-            <div class="category-badge" style="margin-bottom:8px; background-color:${coverColor.badge_color};"> ${a.category.toUpperCase()}</div>
+            <!-- <div class="category-badge" style="margin-bottom:8px; background-color:#87be9d;"> ${a.category.toUpperCase()}</div> -->
             <h3>${a.title}</h3>
             <!-- <p class="lead">${a.excerpt}</p> -->
+            <div class="meta-row">
             <div class="author">
               <div class="avatar">${initials(a.author)}</div>
               <div style="line-height:1.4">
@@ -323,8 +325,6 @@ function renderMain() {
                 <div class="muted-small">${a.date}</div>
               </div>
             </div>
-            <div class="meta-row">
-              <div class="muted-small">⏱ ${a.readTime}</div>
               <a class="read-more" href="#" data-id="${a.id}">Leer artículo completo →</a>
             </div>
           `;
