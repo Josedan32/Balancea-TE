@@ -120,7 +120,7 @@ s/public/sleep/In_Brief_YG_to_Sleep_Spanish_Final.pdf">docs</a></p><br>
     excerpt: "Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud física, mental y emocional.",
     author: "Johan Sebastian <br> Piedrahita ramirez",
     readTime: "7 min",
-    image: "article03",
+    image: "article05",
     comments: 32,
     content: `
     <p>Tomarse unas vacaciones no es un lujo, sino una necesidad vital para mantener la salud
@@ -155,7 +155,7 @@ también potencia el rendimiento y la felicidad en el ámbito laboral.</p><br>
     excerpt: "En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de mantener un equilibrio que favorezca la salud, la energía y..",
     author: "Johan Sebastian <br> Piedrahita ramirez",
     readTime: "5 min",
-    image: "article05",
+    image: "article03",
     comments: 15,
     content: `
       <p>En Balancea-TE, creemos que cuidar la alimentación no se trata solo de comer bien, sino de
